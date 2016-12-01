@@ -13,8 +13,7 @@ module EdgeAging
     when "Conjured"
     end
   end
-
-
+ 
 
 end
 

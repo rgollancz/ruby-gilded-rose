@@ -36,7 +36,7 @@ describe GildedRose do
       gr = GildedRose.new(items)
       expect { gr.update_quality() }.to change { items[0].quality }.by(-1)
     end
-    it "reduces the quality twice as fast after sell in date has passed", focus: true do
+    it "reduces the quality twice as fast after sell in date has passed" do
       items = [bread]
       gr = GildedRose.new(items)
       expect { gr.update_quality() }.to change { items[0].quality }.by(-2)

@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <loadpath>
     <pathentry path="" type="src" />
     <pathentry path="org.rubypeople.rdt.launching.RUBY_CONTAINER" type="con" />
 </loadpath>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<loadpath>
+    <pathentry path="" type="src" />
+    <pathentry path="org.rubypeople.rdt.launching.RUBY_CONTAINER" type="con" />
+</loadpath>
+>>>>>>> 836a60ee47399f9e28a831d5d0f9aab768ef49ab

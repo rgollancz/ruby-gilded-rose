@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>GildedRose.rb</name>
@@ -21,3 +22,28 @@
 		<nature>org.eclipse.dltk.ruby.core.nature</nature>
 	</natures>
 </projectDescription>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>GildedRose.rb</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.rubypeople.rdt.core.rubybuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.dltk.core.scriptbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.rubypeople.rdt.core.rubynature</nature>
+		<nature>org.eclipse.dltk.ruby.core.nature</nature>
+	</natures>
+</projectDescription>
+>>>>>>> 836a60ee47399f9e28a831d5d0f9aab768ef49ab

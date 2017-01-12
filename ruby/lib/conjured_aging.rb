@@ -1,4 +1,5 @@
 class Conjured
+  attr_reader :name, :sell_in, :quality
 
   def initialize(name,sell_in,quality)
     @name = name
@@ -9,6 +10,4 @@ class Conjured
   def update
     return self
   end
-
-
 end

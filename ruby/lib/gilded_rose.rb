@@ -1,44 +1,32 @@
-require_relative 'normal_aging'
-require_relative 'edge_case_aging'
+require_relative 'item'
+require_relative 'brie_aging'
+require_relative 'backstage_aging'
+require_relative 'sulfuras_aging'
+require_relative 'conjured_aging'
 
 class GildedRose
-  include NormalAging
-  include EdgeAging
-
-  EDGE_CASES = ["Aged Brie","Backstage passes to a TAFKAL80ETC concert","Sulfuras, Hand of Ragnaros","Conjured"]
-  NORMAL = 1
-  SPEEDY = 2
-  MIN_QUALITY = 0
-  SELL_BY_DATE = 0
+  attr_reader :items
 
   def initialize(items)
-    @items = items
-  end
-
-  def isEdgeCase?(item)
-    EDGE_CASES.include?(item.name)
+    @items = [items]
   end
 
   def update_quality
-    @items.each do |item|
-      if isEdgeCase?(item)
-        edge_case_update(item)
-      else
-        normal_update(item)
-      end
+    @items.map! do |item|
+      item = prep_for_update(item)
+      item.update
     end
   end
 
-  def normal_update(item)
-    if item.quality == MIN_QUALITY
-      item
-    elsif item.sell_in > SELL_BY_DATE && item.quality >=(MIN_QUALITY+1) || item.sell_in == SELL_BY_DATE && item.quality ==(MIN_QUALITY+1)
-      reduce_quality(NORMAL)
-    else
-      reduce_quality(SPEEDY)
+  def prep_for_update(item)
+    item = Item.new(item.name,item.sell_in,item.quality)
+    case item.name
+    when "Aged Brie" then item = Brie.new(item.name,item.sell_in,item.quality)
+    when "Backstage passes to a TAFKAL80ETC concert" then item = Backstage.new(item.name,item.sell_in,item.quality)
+    when "Sulfuras, Hand of Ragnaros" then item = Sulfuras.new(item.name,item.sell_in,item.quality)
+    when "Conjured" then item = Conjured.new(item.name,item.sell_in,item.quality)
     end
-    return
-      reduce_sell_in(item)
+    return item
   end
 
 end

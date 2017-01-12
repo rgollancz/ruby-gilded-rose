@@ -1,4 +1,4 @@
-class Item
+class Brie
   attr_accessor :name, :sell_in, :quality
 
   def initialize(name,sell_in,quality)
@@ -8,22 +8,17 @@ class Item
   end
 
   def update
-    reduce_quality
+    increase_quality
     reduce_sell_in
     return self
   end
 
-  def reduce_quality
-    @quality -= @sell_in > 0 ? 1 : 2
-    @quality = 0 if @quality < 0
+  def increase_quality
+    @quality < 50 ? @quality += 1 : @quality = 50
   end
 
   def reduce_sell_in
     @sell_in -= 1
-  end
-
-  def to_s()
-    "#{@name}, #{@sell_in}, #{@quality}"
   end
 
 end

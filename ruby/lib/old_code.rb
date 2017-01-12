@@ -1,22 +1,5 @@
-module EdgeAging
-  NORMAL = 1
-  SPEEDY = 2
-  MIN_QUALITY = 0
-  MAX_QUALITY = 50
-
-  def edge_case_update(item)
-    case item.name
-    when "Aged Brie"
-
-    when "Backstage passes to a TAFKAL80ETC concert"
-    when "Sulfuras, Hand of Ragnaros"
-    when "Conjured"
-    end
-  end
- 
-
-end
-
+#
+#
 #     if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
 #       if item.quality > 0
 #         if item.name != "Sulfuras, Hand of Ragnaros"

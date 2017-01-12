@@ -13,6 +13,12 @@ class Item
     return self
   end
 
+  def to_s()
+    "#{@name}, #{@sell_in}, #{@quality}"
+  end
+
+  private
+
   def reduce_quality
     @quality -= @sell_in > 0 ? 1 : 2
     @quality = 0 if @quality < 0
@@ -21,9 +27,4 @@ class Item
   def reduce_sell_in
     @sell_in -= 1
   end
-
-  def to_s()
-    "#{@name}, #{@sell_in}, #{@quality}"
-  end
-
 end

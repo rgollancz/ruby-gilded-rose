@@ -13,6 +13,8 @@ class Brie
     return self
   end
 
+  private
+
   def increase_quality
     @quality < 50 ? @quality += 1 : @quality = 50
   end

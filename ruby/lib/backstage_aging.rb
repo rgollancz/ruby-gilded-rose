@@ -14,6 +14,8 @@ class Backstage
     return self
   end
 
+  private
+
   def increase_quality
     case @sell_in
     when 0 then @quality = 0

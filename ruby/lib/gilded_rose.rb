@@ -18,6 +18,8 @@ class GildedRose
     end
   end
 
+  private
+
   def prep_for_update(item)
     item = Item.new(item.name,item.sell_in,item.quality)
     case item.name

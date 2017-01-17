@@ -9,19 +9,19 @@ class Backstage
   end
 
   def update
-    increase_quality
+    update_quality
     reduce_sell_in
     return self
   end
 
   private
 
-  def increase_quality
+  def update_quality
     case @sell_in
     when 0 then @quality = 0
-    when 0...5 then @quality += 3
-    when 6...10 then @quality += 2
-    when 11...49 then @quality += 1
+    when 0..5 then @quality += 3
+    when 6..10 then @quality += 2
+    when 11..49 then @quality += 1
     end
   end
 

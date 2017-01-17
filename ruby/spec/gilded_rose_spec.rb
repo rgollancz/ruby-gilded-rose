@@ -11,12 +11,6 @@ describe GildedRose do
   let(:backstage) { Item.new("Backstage passes to a TAFKAL80ETC concert",7,20) }
 
   describe "#update_quality" do
-    it "does not change the item name" do
-      items = soup
-      gr = GildedRose.new(items)
-      gr.update_quality
-      expect(gr.items[0].name).to eq "soup"
-    end
     it "does not reduce the quality below zero" do
       items = soup
       gr = GildedRose.new(items)

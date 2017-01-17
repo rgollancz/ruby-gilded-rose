@@ -1,24 +1,39 @@
 require 'item'
 
 describe Item do
-  let(:item) { described_class.new("foo",0,0) }
+  let(:item_in_date) { described_class.new("foo",2,4) }
+  let(:item_out_of_date) { described_class.new("foo",0,6) }
 
   describe "#initialize" do
     it "has a name" do
-      expect(item.name).to eq "foo"
+      expect(item_in_date.name).to eq "foo"
     end
     it "has a sell_in" do
-      expect(item.sell_in).to eq 0
+      expect(item_in_date.sell_in).to eq 2
     end
     it "has a quality" do
-      expect(item.quality).to eq 0
+      expect(item_in_date.quality).to eq 4
     end
   end
 
   describe "#to_s" do
     it "summarizes the item details" do
-      expect(item.to_s).to eq "foo, 0, 0"
+      expect(item_in_date.to_s).to eq "foo, 2, 4"
     end
   end
 
+  describe "#update" do
+    it "reduces the sell in by 1" do
+      expect { item_in_date.update }.to change { item_in_date.sell_in }.by(-1)
+    end
+    it "reduces the quality by 1, when the sell in has not passed" do
+      expect { item_in_date.update }.to change { item_in_date.quality }.by(-1)
+    end
+    it "reduces the quality by 2, when the sell in has not passed" do
+      expect { item_out_of_date.update }.to change { item_out_of_date.quality }.by(-2)
+    end
+    it "does not reduce quality below 0" do
+      expect { item_out_of_date.update }.to_not change { item_in_date.sell_in }
+    end
+  end
 end

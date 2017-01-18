@@ -3,7 +3,8 @@ require 'backstage_aging'
 describe Backstage do
   let(:backstage) { described_class.new("backstage",0,0) }
   let(:backstage_past) { described_class.new("backstage",-3,0) }
-  let(:backstage_future) { described_class.new("backstage",10,8) }
+  let(:backstage_future_3) { described_class.new("backstage",3,8) }
+  let(:backstage_future_10) { described_class.new("backstage",10,8) }
 
   describe "#initialize" do
     it "has a name" do
@@ -22,7 +23,13 @@ describe Backstage do
       expect { backstage.update }.to change { backstage.sell_in }.by(-1)
     end
     it "increases quality by 2, when the sell in is 10" do
-      expect { backstage_future.update }.to change { backstage_future.quality }.by(2)
+      expect { backstage_future_10.update }.to change { backstage_future_10.quality }.by(2)
+    end
+    it "increases quality by 3, when the sell in is 3" do
+      expect { backstage_future_3.update }.to change { backstage_future_3.quality }.by(3)
+    end
+    it "does not reduce quality below 0" do
+      expect { backstage.update }.to_not change { backstage.quality }
     end
   end
 end

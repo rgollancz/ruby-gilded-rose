@@ -3,6 +3,7 @@ require 'item'
 describe Item do
   let(:item_in_date) { described_class.new("foo",2,4) }
   let(:item_out_of_date) { described_class.new("foo",0,6) }
+  let(:item_quality_0) { described_class.new("foo",0,0) }
 
   describe "#initialize" do
     it "has a name" do
@@ -33,7 +34,7 @@ describe Item do
       expect { item_out_of_date.update }.to change { item_out_of_date.quality }.by(-2)
     end
     it "does not reduce quality below 0" do
-      expect { item_out_of_date.update }.to_not change { item_in_date.sell_in }
+      expect { item_quality_0.update }.to_not change { item_quality_0.quality }
     end
   end
 end

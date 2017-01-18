@@ -40,12 +40,11 @@ legendary item and as such its Quality is 80 and it never alters.
 
 Kata originally created by [Terry Hughes](https://github.com/NotMyself/GildedRose). This version of the kata was cloned from [Emily Bache](https://github.com/emilybache/GildedRose-Refactoring-Kata).
 
-## How to use
+## Use in IRB
 
-An example in IRB:
-+![Gilded Rose in Ruby](images/gilded_rose_ruby_irb.png)
+![Gilded Rose in Ruby](images/gilded_rose_ruby_irb.png)
 
-## How to run the tests
+## Run the tests
 
 - cd into the 'ruby' folder and run 'rspec'
 - check there's a sea of green!

@@ -7,8 +7,8 @@ require_relative 'conjured_aging'
 class GildedRose
   attr_reader :items
 
-  def initialize(items)
-    @items = [items]
+  def initialize(*items)
+    @items = items
   end
 
   def update_quality

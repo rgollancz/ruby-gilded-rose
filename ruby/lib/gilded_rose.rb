@@ -25,7 +25,7 @@ class GildedRose
     case item.name
     when "Aged Brie" then item = Brie.new(item.name,item.sell_in,item.quality)
     when "Backstage passes to a TAFKAL80ETC concert" then item = Backstage.new(item.name,item.sell_in,item.quality)
-    when "Sulfuras, Hand of Ragnaros" then item = Sulfuras.new(item.name,item.sell_in,item.quality)
+    when "Sulfuras, Hand of Ragnaros" then item = Sulfuras.new(item.name,item.quality)
     when "Conjured" then item = Conjured.new(item.name,item.sell_in,item.quality)
     end
     return item

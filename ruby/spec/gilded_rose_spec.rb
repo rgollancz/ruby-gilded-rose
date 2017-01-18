@@ -5,10 +5,6 @@ describe GildedRose do
   let(:soup) { Item.new("soup",0,0) }
   let(:flan) { Item.new("flan",10,10) }
   let(:bread) { Item.new("bread",0,10) }
-  let(:brie) { Item.new("Aged Brie",1,10) }
-  let(:old_brie) { Item.new("Aged Brie",1,50) }
-  let(:sulfuras) { Item.new("Sulfuras, Hand of Ragnaros",1,80) }
-  let(:backstage) { Item.new("Backstage passes to a TAFKAL80ETC concert",7,20) }
 
   describe "#update_quality" do
     it "does not reduce the quality below zero" do
@@ -39,14 +35,4 @@ describe GildedRose do
       expect { gr.update_quality }.to change { gr.items[0].quality }.by(-2)
     end
   end
-
-    describe "Sulfuras" do
-      it "quality and sell in are unaffected" do
-        items = sulfuras
-        gr = GildedRose.new(items)
-        gr.update_quality
-        expect(gr.items[0].quality).to eq 80
-        expect(gr.items[0].sell_in).to eq 1
-      end
-    end
-  end
+end

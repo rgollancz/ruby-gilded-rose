@@ -8,8 +8,8 @@ class Item
   end
 
   def update
-    reduce_quality
     reduce_sell_in
+    reduce_quality
     return self
   end
 

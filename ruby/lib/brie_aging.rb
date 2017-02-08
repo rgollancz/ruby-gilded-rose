@@ -8,8 +8,8 @@ class Brie
   end
 
   def update
-    increase_quality
     reduce_sell_in
+    increase_quality
     return self
   end
 

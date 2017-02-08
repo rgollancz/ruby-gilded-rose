@@ -9,8 +9,8 @@ class Backstage
   end
 
   def update
-    update_quality
     reduce_sell_in
+    update_quality
     return self
   end
 
